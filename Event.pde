@@ -54,6 +54,7 @@ public class Event
   
   public void onDraw()
   {
+    if (bgm.isPlaying() == false) { bgm.play(); }
     if (BulletsAlive > 0)
     {
       for (int i=0; i < player.bulletLimit; i++)

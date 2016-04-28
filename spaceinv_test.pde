@@ -27,7 +27,7 @@
   */
  
 import javax.swing.JOptionPane;
-import processing.sound.*;
+import ddf.minim.*;
 
 PlayerObject player = new PlayerObject();
 FireObject[] fireObject = new FireObject[player.bulletLimit];
@@ -36,7 +36,8 @@ LevelManager manager = new LevelManager();
 HUD hud = new HUD();
 Event event = new Event();
 Tools tools = new Tools();
-SoundFile bgm;
+Minim minim;
+AudioPlayer bgm;
 PImage bg_img;
 PImage hudLife;
 PImage hudBomb;
@@ -45,7 +46,7 @@ PFont font;
 void setup() 
 {
   bg_img = loadImage("Andromeda_800x632_HUD.jpg");
-  surface.setTitle("ProcesShooter v0.8 Beta (Build 0027)");
+  surface.setTitle("ProcesShooter v0.8 Beta (Build 0029)");
   background(bg_img);
   size(800, 632);
   frameRate(120);
@@ -55,8 +56,8 @@ void setup()
   hudBomb = loadImage("hud-bomb.png");
   font = loadFont("ArcadeClassic-60.vlw");
   textFont(font, 36);
-  bgm = new SoundFile(this, "bgm.mp3");
-  bgm.loop();
+  minim = new Minim(this);
+  bgm = minim.loadFile("bgm.mp3");
   tools.init();
   tools.help();
   manager.generateMob(0, 1, 400, 100, false); //<>//

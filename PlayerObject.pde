@@ -69,7 +69,7 @@ public class PlayerObject
   {
     JOptionPane.showMessageDialog(frame,
     "Game Over ! You reached the Level " + waveLevel +  " and you scored: " + score,
-    "ProcesShooter v0.8 Beta (Build 0027)",
+    "ProcesShooter v0.8 Beta (Build 0029)",
     JOptionPane.INFORMATION_MESSAGE);
     exit();
   }
